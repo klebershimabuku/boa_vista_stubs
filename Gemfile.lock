@@ -1,15 +1,8 @@
-GIT
-  remote: https://github.com/GabrielMalakias/boa_vista.git
-  revision: b77453e8ae0703c800c577587ebc8ffe7e459bea
-  branch: dev
-  specs:
-    boa_vista (0.0.2)
-      nokogiri
-
 PATH
   remote: .
   specs:
     boa_vista_stubs (0.0.1)
+      boa_vista (~> 0.0.3)
       rails (~> 4.2.6)
 
 GEM
@@ -51,6 +44,8 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.3)
+    boa_vista (0.0.3)
+      nokogiri
     builder (3.2.2)
     coderay (1.1.1)
     concurrent-ruby (1.0.1)
@@ -138,7 +133,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  boa_vista!
   boa_vista_stubs!
   pry-rails
   rspec-rails

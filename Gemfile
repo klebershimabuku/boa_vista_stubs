@@ -12,4 +12,3 @@ gemspec
 
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
-gem 'boa_vista', git: 'https://github.com/GabrielMalakias/boa_vista.git', branch: 'dev'
