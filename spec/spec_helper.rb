@@ -1,4 +1,6 @@
 require 'boa_vista_stubs'
+require 'boa_vista'
+require 'pry'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
@@ -12,5 +14,12 @@ RSpec.configure do |config|
   BoaVistaStubs.configure do |config|
     config.valid_cpf  = '95711895290'
     config.valid_cnpj = '43075237000144'
+  end
+
+  BoaVista.configure do |config|
+    config.code     = 'my code'
+    config.password = 'my password'
+    config.url      = 'http://boa-vista-url.com'
+    config.timeout  = 2
   end
 end
