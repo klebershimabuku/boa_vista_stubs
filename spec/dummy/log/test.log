@@ -1,0 +1,11 @@
+Processing by BoaVistaStubs::RequestsController#index as HTML
+  Rendered text template (0.0ms)
+Completed 200 OK in 36ms (Views: 35.9ms)
+Processing by BoaVistaStubs::RequestsController#index as HTML
+  Parameters: {"params"=>{"consulta"=>"hello world"}}
+  Rendered text template (0.0ms)
+Completed 200 OK in 7ms (Views: 6.7ms)
+Processing by BoaVistaStubs::RequestsController#index as HTML
+  Parameters: {"consulta"=>"hello world"}
+  Rendered text template (0.0ms)
+Completed 200 OK in 9ms (Views: 8.9ms)
