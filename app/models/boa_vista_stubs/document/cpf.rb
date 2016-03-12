@@ -1,5 +1,5 @@
 module BoaVistaStubs
-  class Document::CPF << Document
+  class Document::CPF < Document
     def initialize(document_number)
       @document_number = document_number
     end

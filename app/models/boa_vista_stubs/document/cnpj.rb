@@ -1,5 +1,5 @@
 module BoaVistaStubs
-  class Document::CNPJ << Document
+  class Document::CNPJ < Document
     def initialize(document_number)
       @document_number = document_number
     end
