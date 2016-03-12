@@ -5,15 +5,15 @@ module BoaVistaStubs
       document = Document.identify(params[:consulta])
 
       if document.valid?
-        decorate(document).valid
+        document_response(document).valid
       else
-        decorate(document).invalid
+        document_response(document).invalid
       end
     end
 
-    def decorate(document)
+    def document_response(document)
       # Returns a instance of DocumentDecorator::CPF or DocumentDecorator::CNPJ
-      DocumentDecorator.decorate(document)
+      Document::Response.new(document)
     end
   end
 end
