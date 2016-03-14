@@ -22,14 +22,14 @@ RSpec.describe BoaVistaStubs::Document do
 
   describe '#document_number' do
     context 'cpf' do
-      let(:document_number) { '22132814830' }
+      let(:document_number) { '00019222927451' }
 
       it 'returns document number' do
         params = consulta_params + '1' + document_number
 
         document = described_class.identify(params)
 
-        expect(document.document_number).to eq(document_number)
+        expect(document.document_number).to eq('19222927451')
       end
     end
 

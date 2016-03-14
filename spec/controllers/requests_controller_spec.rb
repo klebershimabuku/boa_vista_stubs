@@ -17,7 +17,7 @@ RSpec.describe BoaVistaStubs::RequestsController, type: :controller do
       end
 
       context 'with valid document number' do
-        let(:expected_layout) { BoaVista::Fixtures.read('layout_138.txt') }
+        let(:expected_layout) { BoaVista::Fixtures.read('layout_138.txt')[0] }
 
         it 'returns the right response' do
           get :index, { consulta: request_string }

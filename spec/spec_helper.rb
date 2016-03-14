@@ -11,11 +11,6 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
-  BoaVistaStubs.configure do |config|
-    config.valid_cpf  = '95711895290'
-    config.valid_cnpj = '43075237000144'
-  end
-
   BoaVista.configure do |config|
     config.code     = 'my code'
     config.password = 'my password'
