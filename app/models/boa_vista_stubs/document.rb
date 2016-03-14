@@ -1,18 +1,13 @@
 module BoaVistaStubs
   class Document
+
     TYPES = {
-      '1' => :cpf,
-      '2' => :cnpj
+      '1' => :CPF,
+      '2' => :CNPJ
     }.freeze
 
     def self.identify(consulta_params)
       new(consulta_params).identify
-    end
-
-    def identify
-      klass = "BoaVistaStubs::Document::#{document_type}".constantize
-
-      klass.new(document_number)
     end
 
     attr_reader :consulta_params
@@ -21,20 +16,21 @@ module BoaVistaStubs
       @consulta_params = consulta_params
     end
 
+    def identify
+      klass = "BoaVistaStubs::Document::#{document_type}".constantize
+
+      klass.new(document_number)
+    end
+
+    protected
+
     def document_number
-      consulta_params.slice(69..82)
+      @consulta_params.slice(69..82)
     end
 
     def document_type
-      TYPES[params.slice(68..68)]
+      TYPES[@consulta_params.slice(68..68)]
     end
 
-    def valid?
-      fail 'Not implemented error'
-    end
-
-    def invalid?
-      fail 'Not implemented error'
-    end
   end
 end

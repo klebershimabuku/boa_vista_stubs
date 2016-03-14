@@ -1,5 +1,7 @@
 module BoaVistaStubs
-  class Document::CNPJ < Document
+  class Document::CNPJ
+    attr_reader :document_number
+
     def initialize(document_number)
       @document_number = document_number
     end
@@ -10,6 +12,10 @@ module BoaVistaStubs
 
     def invalid?
       !valid?
+    end
+
+    def document_type
+      :CNPJ
     end
 
     protected
