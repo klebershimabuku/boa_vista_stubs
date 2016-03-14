@@ -7,9 +7,9 @@ Gem::Specification.new do |s|
   s.version     = BoaVistaStubs::VERSION
   s.authors     = ['Kleber Shimabuku']
   s.email       = ['klebershimabuku@gmail.com']
-  s.homepage    = 'TODO'
-  s.summary     = 'TODO: Summary of BoaVistaStubs.'
-  s.description = 'TODO: Description of BoaVistaStubs.'
+  s.homepage    = 'https://github.com/klebershimabuku/boa_vista_stubs'
+  s.summary     = 'BoaVistaStubs.'
+  s.description = 'BoaVistaStubs.'
   s.license     = 'MIT'
 
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
