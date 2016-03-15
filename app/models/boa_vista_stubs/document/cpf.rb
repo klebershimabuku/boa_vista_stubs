@@ -3,11 +3,11 @@ module BoaVistaStubs
     attr_reader :document_number
 
     def initialize(document_number)
-      @document_number = document_number.slice(3..-1)
+      @document_number = document_number
     end
 
     def valid?
-      allowed.include?(@document_number)
+      allowed.include?(clear_empty_spaces(@document_number))
     end
 
     def invalid?
@@ -19,6 +19,10 @@ module BoaVistaStubs
     end
 
     protected
+
+    def clear_empty_spaces(document_number)
+      document_number.strip
+    end
 
     def allowed
       BoaVistaStubs.configuration.valid_cpf
