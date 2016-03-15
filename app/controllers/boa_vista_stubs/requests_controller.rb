@@ -6,12 +6,18 @@ module BoaVistaStubs
 
       log("Start validating document type: #{document.document_type}")
 
-      if document.valid?
-        log("document number: #{document.document_number} is valid.")
-        render text: document_response(document.document_type).valid
+      if document.timeout?
+          log("document number: #{document.document_number} is valid.")
+          sleep(BoaVista.configuration.timeout + 1)
+          render text: document_response(document.document_type).valid
       else
-        log("document number: #{document.document_number} is invalid.")
-        render text: document_response(document.document_type).invalid
+        if document.valid?
+          log("document number: #{document.document_number} is valid.")
+          render text: document_response(document.document_type).valid
+        else
+          log("document number: #{document.document_number} is invalid.")
+          render text: document_response(document.document_type).invalid
+        end
       end
     end
 

@@ -1,5 +1,7 @@
 module BoaVistaStubs
   class Document::CPF
+    extend BoaVistaStubs::Document::Generic
+
     attr_reader :document_number
 
     def initialize(document_number)
@@ -7,7 +9,7 @@ module BoaVistaStubs
     end
 
     def valid?
-      allowed.include?(@document_number)
+      validator(cleared_document_number).valid_cpf?
     end
 
     def invalid?
@@ -18,10 +20,12 @@ module BoaVistaStubs
       :CPF
     end
 
+
     protected
 
-    def allowed
-      BoaVistaStubs.configuration.valid_cpf
+    def cleared_document_number
+      @document_number.strip
     end
+
   end
 end
