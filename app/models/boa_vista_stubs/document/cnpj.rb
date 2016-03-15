@@ -1,6 +1,6 @@
 module BoaVistaStubs
   class Document::CNPJ
-    extend BoaVistaStubs::Document::Generic
+    include BoaVistaStubs::Document::Extension
 
     attr_reader :document_number
 
@@ -9,7 +9,7 @@ module BoaVistaStubs
     end
 
     def valid?
-      validator(cleared_document_number).valid_cnpj?
+      validator(document_number).valid_cnpj?
     end
 
     def invalid?
@@ -20,10 +20,5 @@ module BoaVistaStubs
       :CNPJ
     end
 
-    protected
-
-    def allowed
-      BoaVistaStubs.configuration.valid_cnpj
-    end
   end
 end

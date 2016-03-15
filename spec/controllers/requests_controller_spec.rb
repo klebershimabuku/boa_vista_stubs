@@ -3,34 +3,14 @@ require 'rails_helper'
 RSpec.describe BoaVistaStubs::RequestsController, type: :controller do
   routes { BoaVistaStubs::Engine.routes }
 
+  before do
+    allow(BoaVistaStubs::DocumentService).to receive(:call).with(anything) { 'document response' }
+  end
+
   describe 'GET :index' do
-    context 'cnpj' do
-      let(:attributes) do
-        {
-          document_type: '2',
-          document_number: '43075237000144'
-        }.merge(BoaVista::Request::Default::CNPJ)
-      end
-
-      let(:request_string) do
-        BoaVista::Request.new(attributes).create
-      end
-
-      context 'with valid document number' do
-        let(:expected_layout) { BoaVista::Fixtures.read('layout_138.txt')[0] }
-
-        it 'returns the right response' do
-          get :index, { consulta: request_string }
-
-          expect(response.body).to eq(expected_layout)
-        end
-      end
-
-      context 'with invalid document number' do
-      end
-    end
-
-    context 'cpf' do
+    it 'renders document response with success' do
+      get :index, consulta: 'my search string'
+      expect(response.body).to eq('document response')
     end
   end
 end

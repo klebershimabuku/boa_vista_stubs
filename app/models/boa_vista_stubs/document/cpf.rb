@@ -1,11 +1,11 @@
 module BoaVistaStubs
   class Document::CPF
-    extend BoaVistaStubs::Document::Generic
+    include BoaVistaStubs::Document::Extension
 
     attr_reader :document_number
 
     def initialize(document_number)
-      @document_number = document_number.slice(3..-1)
+      @document_number = document_number
     end
 
     def valid?
@@ -19,7 +19,6 @@ module BoaVistaStubs
     def document_type
       :CPF
     end
-
 
     protected
 

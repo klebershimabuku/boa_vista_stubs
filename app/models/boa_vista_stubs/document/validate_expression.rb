@@ -1,23 +1,25 @@
 module BoaVistaStubs
   class Document::ValidateExpression
+
     def initialize(document_number)
       @document_number = document_number
     end
 
     def valid_cpf?
-      call(BoaVistaStubs.configuration.valid_cpf)
+      validate_with_regex(BoaVistaStubs.configuration.valid_cpf_expression)
     end
 
     def valid_cnpj?
-      call(BoaVistaStubs.configuration.valid_cpf)
+      validate_with_regex(BoaVistaStubs.configuration.valid_cnpj_expression)
     end
 
     def timeout?
-      call(BoaVistaStubs.configuration.valid_cpf)
+      BoaVistaStubs.configuration.timeout_document
     end
 
-    private
-    def call(regex)
+    protected
+
+    def validate_with_regex(regex)
       @document_number.match(regex)
     end
   end
