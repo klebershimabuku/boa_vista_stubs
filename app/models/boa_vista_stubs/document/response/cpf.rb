@@ -2,7 +2,7 @@ module BoaVistaStubs
   class Document
     class Response::Cpf < Response::Base
       LAYOUTS = {
-        valid: 221,
+        valid: 249,
         invalid: 999
       }
 
