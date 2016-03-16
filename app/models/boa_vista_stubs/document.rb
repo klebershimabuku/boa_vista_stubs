@@ -6,14 +6,12 @@ module BoaVistaStubs
       '2' => :CNPJ
     }.freeze
 
-    def self.identify(consulta_params)
-      new(consulta_params).identify
+    def self.identify(search_params)
+      new(search_params).identify
     end
 
-    attr_reader :consulta_params
-
-    def initialize(consulta_params)
-      @consulta_params = consulta_params
+    def initialize(search_params)
+      @search_params = search_params
     end
 
     def identify
@@ -25,11 +23,11 @@ module BoaVistaStubs
     protected
 
     def document_number
-      consulta_params.slice(69..82)
+      @search_params.slice(69..82)
     end
 
     def document_type
-      TYPES[consulta_params.slice(68..68)]
+      TYPES[@search_params.slice(68..68)]
     end
 
   end
