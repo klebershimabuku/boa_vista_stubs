@@ -1,5 +1,5 @@
 module BoaVistaStubs
-  class Document::CPF
+  class Document::Cpf
     include BoaVistaStubs::Document::Extension
 
     attr_reader :document_number

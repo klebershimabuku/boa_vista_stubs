@@ -1,6 +1,6 @@
 module BoaVistaStubs
   class Document
-    class Response::CNPJ < Response::Base
+    class Response::Cnpj < Response::Base
       LAYOUTS = {
         valid: 138,
         invalid: 901

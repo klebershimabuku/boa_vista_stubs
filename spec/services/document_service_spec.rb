@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe BoaVistaStubs::DocumentService do
   describe '#call' do
-    let(:document) { BoaVistaStubs::Document::CPF.new('12345') }
+    let(:document) { BoaVistaStubs::Document::Cpf.new('12345') }
 
     before do
       allow(BoaVistaStubs::Document).to receive(:identify).with('search params') { document }

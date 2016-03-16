@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe BoaVistaStubs::Document::CNPJ do
+RSpec.describe BoaVistaStubs::Document::Cnpj do
   subject(:instance) { described_class.new(document_number) }
 
   let(:document_number) { '43075232000115' }

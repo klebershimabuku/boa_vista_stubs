@@ -7,7 +7,7 @@ module BoaVistaStubs
       end
 
       def self.formatted_document_type(document_type)
-        document_type.upcase.to_s
+        document_type.capitalize.to_s
       end
     end
   end

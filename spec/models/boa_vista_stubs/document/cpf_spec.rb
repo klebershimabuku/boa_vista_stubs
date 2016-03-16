@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe BoaVistaStubs::Document::CPF do
+RSpec.describe BoaVistaStubs::Document::Cpf do
   subject(:instance) { described_class.new(document_number) }
 
   let(:document_number) { '86165232000115' }

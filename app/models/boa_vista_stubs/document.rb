@@ -1,11 +1,6 @@
 module BoaVistaStubs
   class Document
 
-    TYPES = {
-      '1' => :CPF,
-      '2' => :CNPJ
-    }.freeze
-
     def self.identify(search_params)
       new(search_params).identify
     end
@@ -15,20 +10,21 @@ module BoaVistaStubs
     end
 
     def identify
-      klass = "BoaVistaStubs::Document::#{document_type}".constantize
+      document = build_document
 
-      klass.new(document_number)
+      klass = "BoaVistaStubs::Document::#{document_type_by_document(document)}".constantize
+
+      klass.new(document.document_number)
     end
 
     protected
 
-    def document_number
-      @search_params.slice(69..82)
+    def build_document
+      BoaVista::Request.read(@search_params)
     end
 
-    def document_type
-      TYPES[@search_params.slice(68..68)]
+    def document_type_by_document(document)
+      BoaVista::Request.document_name(document.document_type).to_s.camelize # :cpf or :cnpj
     end
-
   end
 end

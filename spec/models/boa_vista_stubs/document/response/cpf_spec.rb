@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe BoaVistaStubs::Document::Response::CPF do
+RSpec.describe BoaVistaStubs::Document::Response::Cpf do
   subject(:instance) { described_class.new }
 
   describe '#valid_document' do

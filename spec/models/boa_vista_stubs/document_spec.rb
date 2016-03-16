@@ -7,43 +7,16 @@ RSpec.describe BoaVistaStubs::Document do
   end
 
   describe '.identify' do
-    it 'returns a instance of Document::CPF' do
+    it 'returns a instance of Document::Cpf' do
       document = described_class.identify(search_params + '1')
 
-      expect(document).to be_a_instance_of(BoaVistaStubs::Document::CPF)
+      expect(document).to be_a_instance_of(BoaVistaStubs::Document::Cpf)
     end
 
-    it 'returns a instance of Document::CNPJ' do
+    it 'returns a instance of Document::Cnpj' do
       document = described_class.identify(search_params + '2')
 
-      expect(document).to be_a_instance_of(BoaVistaStubs::Document::CNPJ)
+      expect(document).to be_a_instance_of(BoaVistaStubs::Document::Cnpj)
     end
   end
-
-  describe '#document_number' do
-    context 'cpf' do
-      let(:document_number) { '19222927451' }
-
-      it 'returns document number' do
-        params = search_params + '1' + document_number
-
-        document = described_class.identify(params)
-
-        expect(document.document_number).to eq('19222927451')
-      end
-    end
-
-    context 'cnpj' do
-      let(:document_number) { '86165232000115' }
-
-      it 'returns document number' do
-        params = search_params + '2' + document_number
-
-        document = described_class.identify(params)
-
-        expect(document.document_number).to eq(document_number)
-      end
-    end
-  end
-
 end

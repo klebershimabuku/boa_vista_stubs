@@ -1,5 +1,5 @@
 module BoaVistaStubs
-  class Document::CNPJ
+  class Document::Cnpj
     include BoaVistaStubs::Document::Extension
 
     attr_reader :document_number
