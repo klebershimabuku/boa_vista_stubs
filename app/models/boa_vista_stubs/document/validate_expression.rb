@@ -14,7 +14,7 @@ module BoaVistaStubs
     end
 
     def timeout?
-      BoaVistaStubs.configuration.timeout_document
+      validate_with_regex(BoaVistaStubs.configuration.timeout_document_expression)
     end
 
     protected

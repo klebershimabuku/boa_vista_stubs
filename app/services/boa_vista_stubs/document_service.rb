@@ -1,33 +1,22 @@
 module BoaVistaStubs
-  module DocumentService
-    module_function
+  class DocumentService
 
-    def call(search_params)
+    def self.call(search_params)
       # Returns a Document::CPF or Document::CNPJ instance
       document = BoaVistaStubs::Document.identify(search_params)
 
-      log("Start validating document type: #{document.document_type}")
+      Timeout.invoke if document.timeout?
 
-      fail BoaVista::Errors::Timeout.new('timed out') if document.timeout?
+      # Returns a Document::Response::CPF or Document::Response::CNPJ
+      response = BoaVistaStubs::Document::Response.identify(document_type)
 
       if document.valid?
-        log("document number: #{document.document_number} is valid.")
-
-        document_response(document.document_type).valid
+        # renders valid response for specific type of document
+        response.valid_document
       else
-        log("document number: #{document.document_number} is invalid.")
-
-        document_response(document.document_type).invalid
+        # renders invalid response for specific type of document
+        response.invalid_document
       end
     end
-
-    def document_response(document_type)
-      BoaVistaStubs::Document::Response.new(document_type)
-    end
-
-    def log(message)
-      Rails.logger.info("[BoaVistaStubs] - #{message}")
-    end
-
   end
 end
