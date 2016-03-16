@@ -5,10 +5,10 @@ module BoaVistaStubs
       # Returns a Document::CPF or Document::CNPJ instance
       document = BoaVistaStubs::Document.identify(search_params)
 
-      Timeout.invoke if document.timeout_document?
+      BoaVistaStubs::DocumentService::Sleep.invoke if document.timeout_document?
 
       # Returns a Document::Response::CPF or Document::Response::CNPJ
-      response = BoaVistaStubs::Document::Response.identify(document.document_type)
+      response = BoaVistaStubs::Document::Response.identify(document.document_type).new
 
       if document.valid?
         # renders valid response for specific type of document

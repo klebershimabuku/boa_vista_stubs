@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    boa_vista_stubs (0.0.3)
+    boa_vista_stubs (0.0.4)
       boa_vista (~> 0.0.6)
       rails (~> 3.2.22)
       test-unit (~> 3.0)
