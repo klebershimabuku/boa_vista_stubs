@@ -1,7 +1,7 @@
 module BoaVistaStubs
   class DocumentService::Timeout
     def self.invoke
-      sleep(BoaVista.configuration.timeout + 1)
+      fail(BoaVista::Errors::Timeout)
     end
   end
 end

@@ -7,11 +7,11 @@ module BoaVistaStubs
       }
 
       def valid_document
-        read_layout(LAYOUT[:valid])
+        read_layout(LAYOUTS[:valid])
       end
 
       def invalid_document
-        read_layout(LAYOUT[:invalid])
+        read_layout(LAYOUTS[:invalid])
       end
     end
   end
