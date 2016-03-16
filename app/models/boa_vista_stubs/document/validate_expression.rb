@@ -6,15 +6,15 @@ module BoaVistaStubs
     end
 
     def valid_cpf?
-      validate_with_regex(BoaVistaStubs.configuration.valid_cpf_expression)
+      validate_with_regex(BoaVistaStubs.configuration.valid_cpf)
     end
 
     def valid_cnpj?
-      validate_with_regex(BoaVistaStubs.configuration.valid_cnpj_expression)
+      validate_with_regex(BoaVistaStubs.configuration.valid_cnpj)
     end
 
-    def timeout?
-      validate_with_regex(BoaVistaStubs.configuration.timeout_document_expression)
+    def timeout_document?
+      validate_with_regex(BoaVistaStubs.configuration.timeout_document)
     end
 
     protected

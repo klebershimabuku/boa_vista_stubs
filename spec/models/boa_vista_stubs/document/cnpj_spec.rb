@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe BoaVistaStubs::Document::CNPJ do
   subject(:instance) { described_class.new(document_number) }
 
-  let(:document_number) { '86165232000115' }
+  let(:document_number) { '43075232000115' }
 
   describe '#initialize' do
     it { expect(instance).to be_a_instance_of(described_class) }
@@ -11,8 +11,6 @@ RSpec.describe BoaVistaStubs::Document::CNPJ do
 
   describe '#valid?' do
     it 'returns true when the document number is included in configuration' do
-      allow_any_instance_of(BoaVistaStubs::Document::CNPJ).to receive(:allowed) { document_number }
-
       document = described_class.new(document_number)
 
       expect(document).to be_valid

@@ -25,11 +25,11 @@ module BoaVistaStubs
     protected
 
     def document_number
-      @consulta_params.slice(69..82)
+      consulta_params.slice(69..82)
     end
 
     def document_type
-      TYPES[@consulta_params.slice(68..68)]
+      TYPES[consulta_params.slice(68..68)]
     end
 
   end

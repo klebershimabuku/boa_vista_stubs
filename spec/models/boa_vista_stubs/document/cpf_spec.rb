@@ -11,9 +11,7 @@ RSpec.describe BoaVistaStubs::Document::CPF do
 
   describe '#valid?' do
     it 'returns true when the document number is included in configuration' do
-      document_number = "000#{BoaVistaStubs.configuration.valid_cpf}"
-
-      allow_any_instance_of(BoaVistaStubs::Document::CPF).to receive(:allowed) { document_number }
+      document_number = "30630011299   "
 
       document = described_class.new(document_number)
 

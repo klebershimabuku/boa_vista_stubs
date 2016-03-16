@@ -2,12 +2,15 @@ require 'rails_helper'
 
 RSpec.describe BoaVistaStubs::DocumentService do
   describe '#call' do
-    context 'when timeout is enabled' do
-      let(:document) { BoaVistaStubs::Document::CPF.new('12345') }
+    let(:document) { BoaVistaStubs::Document::CPF.new('12345') }
 
+    before do
+      allow(BoaVistaStubs::Document).to receive(:identify).with('search params') { document }
+    end
+
+    context 'when timeout document' do
       before do
-        allow(BoaVistaStubs::Document).to receive(:identify).with('search params') { document }
-        allow(document).to receive(:timeout?) { true }
+        allow(document).to receive(:timeout_document?) { true }
       end
 
       it 'raises timeout error' do
@@ -15,8 +18,34 @@ RSpec.describe BoaVistaStubs::DocumentService do
       end
     end
 
-    context 'when document is valid'
+    context 'when document is valid' do
+      let(:response) { instance_double('response', valid_document: 'this is a valid response') }
 
-    context 'when document is invalid'
+      before do
+        allow(document).to receive(:valid?) { true }
+        allow(document).to receive(:timeout_document?) { false }
+
+        allow(BoaVistaStubs::Document::Response).to receive(:identify).with(anything) { response }
+      end
+
+      it 'returns the valid response' do
+        expect(BoaVistaStubs::DocumentService.call('search params')).to eq(response.valid_document)
+      end
+    end
+
+    context 'when document is invalid' do
+      let(:response) { instance_double('response', invalid_document: 'this is a invalid response') }
+
+      before do
+        allow(document).to receive(:valid?) { false }
+        allow(document).to receive(:timeout_document?) { false }
+
+        allow(BoaVistaStubs::Document::Response).to receive(:identify).with(anything) { response }
+      end
+
+      it 'returns the invalid response' do
+        expect(BoaVistaStubs::DocumentService.call('search params')).to eq(response.invalid_document)
+      end
+    end
   end
 end

@@ -22,7 +22,7 @@ RSpec.describe BoaVistaStubs::Document do
 
   describe '#document_number' do
     context 'cpf' do
-      let(:document_number) { '00019222927451' }
+      let(:document_number) { '19222927451' }
 
       it 'returns document number' do
         params = consulta_params + '1' + document_number
