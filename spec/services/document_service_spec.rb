@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe BoaVistaStubs::DocumentService do
   describe '#call' do
     let(:document) { BoaVistaStubs::Document::Cpf.new('12345') }
+    let(:fake_class) { double }
 
     before do
       allow(BoaVistaStubs::Document).to receive(:identify).with('search params') { document }
@@ -13,8 +14,10 @@ RSpec.describe BoaVistaStubs::DocumentService do
         allow(document).to receive(:timeout_document?) { true }
       end
 
-      it 'raises timeout error' do
-        expect { BoaVistaStubs::DocumentService.call('search params') }.to raise_error(BoaVista::Errors::Timeout)
+      it 'calls sleep to cause timeout error' do
+        expect(BoaVistaStubs::DocumentService::Sleep).to receive(:invoke)
+
+        BoaVistaStubs::DocumentService.call('search params')
       end
     end
 
@@ -25,7 +28,8 @@ RSpec.describe BoaVistaStubs::DocumentService do
         allow(document).to receive(:valid?) { true }
         allow(document).to receive(:timeout_document?) { false }
 
-        allow(BoaVistaStubs::Document::Response).to receive(:identify).with(anything) { response }
+        allow(BoaVistaStubs::Document::Response).to receive(:identify).with(anything) { fake_class }
+        allow(fake_class).to receive(:new) { response }
       end
 
       it 'returns the valid response' do
@@ -40,7 +44,8 @@ RSpec.describe BoaVistaStubs::DocumentService do
         allow(document).to receive(:valid?) { false }
         allow(document).to receive(:timeout_document?) { false }
 
-        allow(BoaVistaStubs::Document::Response).to receive(:identify).with(anything) { response }
+        allow(BoaVistaStubs::Document::Response).to receive(:identify).with(anything) { fake_class }
+        allow(fake_class).to receive(:new) { response }
       end
 
       it 'returns the invalid response' do

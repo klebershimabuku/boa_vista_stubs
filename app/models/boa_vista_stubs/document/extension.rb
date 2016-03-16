@@ -2,7 +2,7 @@ module BoaVistaStubs
   module Document::Extension
 
     def timeout_document?
-      validator(document_number).timeout?
+      validator(document_number).timeout_document?
     end
 
     protected
