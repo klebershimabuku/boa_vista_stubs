@@ -16,8 +16,7 @@ Gem::Specification.new do |s|
   s.test_files = Dir['spec/**/*']
 
   s.add_dependency 'rails', '~> 3.2.22'
-  s.add_dependency 'boa_vista', '~> 0.0.6'
-  s.add_dependency 'test-unit', '~> 3.0'
+  s.add_dependency 'boa_vista', '~> 0.0.7'
 
   s.add_development_dependency 'rspec-rails'
   s.add_development_dependency 'pry-rails'
