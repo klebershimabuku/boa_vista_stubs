@@ -18,7 +18,7 @@ RSpec.describe BoaVistaStubs::Document::Cpf do
 
   describe '#valid?' do
     it 'returns true when the document number is included in configuration' do
-      document_number = "30630011299   "
+      document_number = "00030630011299"
 
       document = described_class.new(document_number)
 
