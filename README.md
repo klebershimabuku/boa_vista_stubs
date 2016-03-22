@@ -1,4 +1,4 @@
-# BoaVistaStubs
+# BoaVistaStubs [![Build Status](https://travis-ci.org/klebershimabuku/boa_vista_stubs.svg?branch=master)](https://travis-ci.org/klebershimabuku/boa_vista_stubs)
 
 Rails Engine to generate stub requests for BoaVista (SCPC)
 
