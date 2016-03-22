@@ -2,8 +2,7 @@
 # the Docker Hub.
 # https://registry.hub.docker.com/_/ruby/
 # If you want to use a specific version you would use a tag:
-ruby:1.9.3
-box: ruby
+box: wercker/ruby
 # You can also use services such as databases. Read more on our dev center:
 # http://devcenter.wercker.com/docs/services/index.html
 # services:
@@ -21,6 +20,8 @@ build:
     # Read more about steps on our dev center:
     # http://devcenter.wercker.com/docs/steps/index.html
     steps:
+        - rvm-use:
+            version: ruby-1.9.3-p484
         - script:
             name: install Nokogiri
             code: bundle config build.nokogiri --use-system-libraries
