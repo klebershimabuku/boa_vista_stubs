@@ -2,10 +2,12 @@ module BoaVistaStubs
   class Document::Cpf
     include BoaVistaStubs::Document::Extension
 
-    attr_reader :document_number
-
     def initialize(document_number)
       @document_number = document_number
+    end
+
+    def document_number
+      @document_number.slice(3..-1)
     end
 
     def valid?
