@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    boa_vista_stubs (0.0.5)
+    boa_vista_stubs (0.0.6)
       boa_vista (~> 0.0.7)
       rails (~> 3.2.22)
 
@@ -10,7 +10,7 @@ GEM
   specs:
     actionmailer (3.2.22.2)
       actionpack (= 3.2.22.2)
-      mail (~> 2.6.0)
+      mail (~> 2.5.4)
     actionpack (3.2.22.2)
       activemodel (= 3.2.22.2)
       activesupport (= 3.2.22.2)
@@ -36,7 +36,7 @@ GEM
       i18n (~> 0.6, >= 0.6.4)
       multi_json (~> 1.0)
     arel (3.0.3)
-    boa_vista (0.0.7)
+    boa_vista (0.0.10)
       nokogiri
     builder (3.0.4)
     coderay (1.1.1)
@@ -53,14 +53,16 @@ GEM
     i18n (0.7.0)
     journey (1.0.4)
     json (1.8.3)
-    mail (2.6.3)
-      mime-types (>= 1.16, < 3)
+    mail (2.5.4)
+      mime-types (~> 1.16)
+      treetop (~> 1.4.8)
     method_source (0.8.2)
-    mime-types (2.99.1)
+    mime-types (1.25.1)
     mini_portile2 (2.0.0)
     multi_json (1.11.2)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
+    polyglot (0.3.5)
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -125,6 +127,9 @@ GEM
     thor (0.19.1)
     tilt (1.4.1)
     tins (1.6.0)
+    treetop (1.4.15)
+      polyglot
+      polyglot (>= 0.3.1)
     tzinfo (0.3.47)
 
 PLATFORMS
