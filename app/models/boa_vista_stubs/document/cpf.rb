@@ -25,7 +25,7 @@ module BoaVistaStubs
     protected
 
     def cleared_document_number
-      @document_number.strip
+      document_number.strip
     end
 
   end
