@@ -1,6 +1,14 @@
 require 'boa_vista_stubs'
 require 'boa_vista'
+require 'simplecov'
+require 'coveralls'
 require 'pry'
+
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+  SimpleCov::Formatter::HTMLFormatter,
+  Coveralls::SimpleCov::Formatter
+]
+SimpleCov.start
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
