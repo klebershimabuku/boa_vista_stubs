@@ -20,7 +20,9 @@ build:
     # Read more about steps on our dev center:
     # http://devcenter.wercker.com/docs/steps/index.html
     steps:
-        - wercker/rvm-use@1.9.3
+        - wercker/rvm-use@1.0.0
+        - rvm-use:
+            version: 1.9.3-p484
         - script:
             name: install Nokogiri
             code: bundle config build.nokogiri --use-system-libraries
