@@ -20,4 +20,6 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'rspec-rails'
   s.add_development_dependency 'pry-rails'
+  s.add_development_dependency 'simplecov'
+  s.add_development_dependency 'coveralls'
 end

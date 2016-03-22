@@ -1,4 +1,5 @@
-# BoaVistaStubs [![Build Status](https://travis-ci.org/klebershimabuku/boa_vista_stubs.svg?branch=master)](https://travis-ci.org/klebershimabuku/boa_vista_stubs)[![Gem Version](https://badge.fury.io/rb/boa_vista_stubs.svg)](https://badge.fury.io/rb/boa_vista_stubs) [![Code Climate](https://codeclimate.com/github/klebershimabuku/boa_vista_stubs/badges/gpa.svg)](https://codeclimate.com/github/klebershimabuku/boa_vista_stubs)
+# BoaVistaStubs [![Build Status](https://travis-ci.org/klebershimabuku/boa_vista_stubs.svg?branch=master)](https://travis-ci.org/klebershimabuku/boa_vista_stubs) [![Gem Version](https://badge.fury.io/rb/boa_vista_stubs.svg)](https://badge.fury.io/rb/boa_vista_stubs) [![Code Climate](https://codeclimate.com/github/klebershimabuku/boa_vista_stubs/badges/gpa.svg)](https://codeclimate.com/github/klebershimabuku/boa_vista_stubs) [![Coverage Status](https://coveralls.io/repos/github/klebershimabuku/boa_vista_stubs/badge.svg?branch=simplecov)](https://coveralls.io/github/klebershimabuku/boa_vista_stubs?branch=simplecov)
+
 
 Rails Engine to generate stub requests for BoaVista (SCPC)
 
