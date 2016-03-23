@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    boa_vista_stubs (0.0.8)
+    boa_vista_stubs (0.0.7)
       boa_vista (~> 0.0.12)
       rails (~> 3.2.22)
 
