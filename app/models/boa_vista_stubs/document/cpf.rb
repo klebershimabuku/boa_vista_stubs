@@ -6,12 +6,12 @@ module BoaVistaStubs
       @document_number = document_number
     end
 
-    def document_number
+    def number
       @document_number.slice(3..-1)
     end
 
     def valid?
-      validator(cleared_document_number).valid_cpf?
+      validator(cleared_number).valid_cpf?
     end
 
     def invalid?
@@ -24,8 +24,8 @@ module BoaVistaStubs
 
     protected
 
-    def cleared_document_number
-      document_number.strip
+    def cleared_number
+      number.strip
     end
 
   end
