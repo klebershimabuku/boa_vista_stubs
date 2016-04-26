@@ -2,13 +2,13 @@ module BoaVistaStubs
   module Document::Extension
 
     def timeout_document?
-      validator(document_number).timeout_document?
+      validator(number).timeout_document?
     end
 
     protected
 
-    def validator(document_number)
-      BoaVistaStubs::Document::ValidateExpression.new(document_number)
+    def validator(number)
+      BoaVistaStubs::Document::ValidateExpression.new(number)
     end
   end
 end

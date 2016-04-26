@@ -16,6 +16,9 @@ Gem::Specification.new do |s|
   s.test_files = Dir['spec/**/*']
 
   s.add_dependency 'rails', '~> 3.2.22'
+  s.add_dependency 'i18n', '0.6.11'
+  s.add_dependency 'rake', '0.9.2.2'
+  s.add_dependency 'rack-cache', '~> 1.2.0'
   s.add_dependency 'boa_vista', '~> 0.0.12'
 
   s.add_development_dependency 'rspec-rails'

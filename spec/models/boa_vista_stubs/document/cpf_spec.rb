@@ -9,10 +9,10 @@ RSpec.describe BoaVistaStubs::Document::Cpf do
     it { expect(instance).to be_a_instance_of(described_class) }
   end
 
-  describe '#document_number' do
+  describe '#number' do
     it 'returns the document number without zeros' do
       doc = described_class.new(document_number)
-      expect(doc.document_number).to eq('30630011299')
+      expect(doc.number).to eq('30630011299')
     end
   end
 
